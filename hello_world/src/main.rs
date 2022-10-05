@@ -1,4 +1,3 @@
-
 fn main()
 {
   println!("Hello {}!", get_world_str());
