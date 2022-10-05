@@ -1,6 +1,11 @@
+mod fibonacci;
+
 fn main()
 {
   println!("Hello {}!", get_world_str());
+
+  let n:u32 = 20;
+  println!("Fibbonacci of {}: {}", n, fibonacci::fibonacci(n));
 }
 
 fn get_world_str() -> String
