@@ -1,11 +1,33 @@
+use std::io;
+
 mod fibonacci;
 
 fn main()
 {
-  println!("Hello {}!", get_world_str());
+  println!("Hello {}! Enter a number you'd like to run Fibbonacci with",
+           get_world_str());
 
-  let n:u32 = 20;
-  println!("Fibbonacci of {}: {}", n, fibonacci::fibonacci(n));
+  let mut number:String = String::new();
+  io::stdin()
+    .read_line(&mut number)
+    .expect("Failed to read input");
+  
+  while number.ends_with('\r') || number.ends_with('\n')
+  {
+    number.pop();
+  }
+
+  match number.parse::<u32>()
+  {
+    Ok(n) =>
+    {
+      println!("Fibbonacci of {}: {}", n, fibonacci::fibonacci(n));
+    }
+    Err(err) =>
+    {
+      println!("Could not parse {} as u32. Err: {}", number, err);
+    }
+  }
 }
 
 fn get_world_str() -> String

@@ -15,10 +15,12 @@ fn fib(n: u32, mem: &mut HashMap<u32, u32>) -> u32
 
   match mem.get(&n)
   {
-    Some(res) => {
+    Some(res) =>
+    {
       return *res;
     },
-    None => {
+    None =>
+    {
       let fib_1 = fib(n - 1, mem);
       let fib_2 = fib(n  - 2, mem);
       mem.insert(n,  fib_1 + fib_2);
