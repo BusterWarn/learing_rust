@@ -1,6 +1,19 @@
 #ifndef __CUSTOM_RUST_LIB__
 #define __CUSTOM_RUST_LIB__
 
-[[nodiscard]] std::uint32_t rust_function();
+#ifdef __cplusplus
+extern "C"{
+
+// For C++
+[[nodiscard]] std::uint32_t power_of(const std::uint64_t base, std::uint16_t exponent);
+
+}
+#else
+
+// For C
+unsigned int power_of(const unsigned long base, const unsigned short exponent);
+
+#endif
+
 
 #endif // __CUSTOM_RUST_LIB__

@@ -4,7 +4,7 @@
 
 int main()
 {
-  std::cout << "Hello World " << rust_function() << "\n";
+  std::cout << "The power of C++ and rust: " << power_of(3, 3) << "\n";
 
   return 0;
 }

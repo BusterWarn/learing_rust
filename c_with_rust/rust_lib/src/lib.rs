@@ -1,5 +1,16 @@
 #[no_mangle]
-pub extern "C" fn rust_function() -> u32
+pub extern fn power_of(base: u64, exponent: u16) -> u64
 {
-  5
+  let mut res: u64 = 0;
+  for i in 0..=exponent
+  {
+    match i
+    {
+      0 => res = 0,
+      1 => res = base,
+      _ => res = res * base
+    }
+  }
+
+  return res;
 }
