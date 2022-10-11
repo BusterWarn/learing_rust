@@ -14,3 +14,5 @@ target
 debug
 *.exe
 *.o
+*.so
+*.dll
