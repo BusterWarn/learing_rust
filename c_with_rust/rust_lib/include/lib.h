@@ -5,14 +5,14 @@
 extern "C"
 {
 
-// For C++
+// For C++ Notice how this header does not have the same types as in Rust, but the program will still compile.
 [[nodiscard]] std::uint64_t power_of(const std::uint64_t base, std::uint64_t exponent);
 
 }
 #else
 
 // For C
-unsigned int power_of(const unsigned long base, const unsigned short exponent);
+uint_64 power_of(const uint_8 base, const uint_8 exponent);
 
 #endif
 
