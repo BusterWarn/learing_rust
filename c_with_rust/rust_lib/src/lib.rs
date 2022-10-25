@@ -1,5 +1,5 @@
 #[no_mangle]
-pub extern fn power_of(base: u64, exponent: u16) -> u64
+pub extern "C" fn power_of(base: u8, exponent: u8) -> u64
 {
   let mut res: u64 = 0;
   for i in 0..=exponent
@@ -7,8 +7,8 @@ pub extern fn power_of(base: u64, exponent: u16) -> u64
     match i
     {
       0 => res = 0,
-      1 => res = base,
-      _ => res = res * base
+      1 => res = base as u64,
+      _ => res = res * base as u64
     }
   }
 

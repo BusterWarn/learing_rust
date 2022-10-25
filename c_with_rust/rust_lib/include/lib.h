@@ -2,10 +2,11 @@
 #define __CUSTOM_RUST_LIB__
 
 #ifdef __cplusplus
-extern "C"{
+extern "C"
+{
 
 // For C++
-[[nodiscard]] std::uint32_t power_of(const std::uint64_t base, std::uint16_t exponent);
+[[nodiscard]] std::uint64_t power_of(const std::uint64_t base, std::uint64_t exponent);
 
 }
 #else
